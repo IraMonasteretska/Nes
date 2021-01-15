@@ -1,0 +1,149 @@
+.services {
+   padding-top: 120px;
+   padding-bottom: 153px;
+
+   &__title {
+      padding-bottom: 23px;
+      margin-bottom: 123px;
+   }
+
+   &__scroll {
+      top: -20px;
+      width: 800px;
+      &:before {
+         content: "04";
+      }
+   }
+}
+
+.gallery {
+   display: flex;
+   flex-wrap: wrap;
+   max-width: 1411px;
+   margin: 0 auto;
+
+   &__link {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid var(--color-red);
+      color: var(--color-red);
+      opacity: 0;
+      transition: opacity 0.3s;
+      svg path {
+         fill: var(--color-red);
+         stroke: var(--color-red);
+      }
+   }
+
+   &__item {
+      position: relative;
+      flex-shrink: 0;
+      cursor: pointer;
+
+      &:after {
+         content: "";
+         display: none;
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background-color: rgba(255, 255, 255, 0.4);
+         z-index: 1;
+         transition: background-color 0.3s;
+      }
+
+      &:hover {
+         .gallery__link {
+            opacity: 1;
+            transition: opacity 0.3s;
+            z-index: 2;
+         }
+         &:after {
+            display: block;
+            transition: background-color 0.5s;
+         }
+      }
+
+      img {
+         width: 100%;
+      }
+
+      &:first-child {
+         margin-right: 5px;
+         width: calc(55% - 10px);
+
+         .gallery__title {
+            top: 28px;
+            left: 21px;
+         }
+      }
+
+      &:nth-child(2) {
+         width: calc(45% + 5px);
+
+         .gallery__title {
+            bottom: 30px;
+            right: 20px;
+         }
+      }
+
+      &:nth-child(3) {
+         margin-right: 5px;
+         width: calc(45% + 2px);
+
+         .gallery__title {
+            top: 27px;
+            right: 18px;
+         }
+      }
+
+      &:nth-child(4) {
+         width: calc(55% - 7px);
+
+         &:after {
+            display: none;
+         }
+         .gallery__link {
+            top: auto;
+            left: auto;
+            bottom: 45px;
+            right: 24px;
+            transform: translate(0, 0);
+            color: #fff;
+            border: 2px solid #fff;
+            opacity: 1;
+
+            svg path {
+               stroke: #fff;
+               fill: #fff;
+            }
+         }
+      }
+   }
+
+   &__title {
+      position: absolute;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 32px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      z-index: 2;
+   }
+
+   &__text {
+      position: absolute;
+      top: 48%;
+      color: #fff;
+      transform: translateY(-50%);
+      right: 20px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 170%;
+      text-align: right;
+      max-width: 250px;
+   }
+}

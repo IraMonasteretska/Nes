@@ -1,0 +1,269 @@
+.first {
+	padding-top: 11px;
+	padding-bottom: 185px;
+	background: #fff;
+	box-shadow: 0px 10px 27px -13px rgba(0, 0, 0, 0.1) inset;
+
+	&__bottom {
+		max-width: 360px;
+		margin-right: 40px;
+		margin-left: auto;
+	}
+
+	&__scroll {
+		top: 111px;
+		width: 343px;
+
+		&:before {
+			bottom: 50%;
+			transform: translateY(50%);
+			width: 77px;
+			height: 2px;
+			background: var(--color-dark);
+			animation: slide-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate both;
+		}
+	}
+}
+
+@keyframes slide-top {
+	0% {
+		transform: translateX(0) translateY(50%);
+	}
+
+	100% {
+		transform: translateX(50px) translateY(50%);
+	}
+}
+
+.first-slider {
+	padding: 0 30px;
+
+	&__item {
+		position: relative;
+		background: url("../img/svg/first-bg.svg") no-repeat center 78%;
+		min-width: 0;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&__wrap {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 auto;
+		max-width: 1605px;
+		align-items: flex-start;
+	}
+
+	&__content {
+		display: flex;
+		padding-top: 206px;
+		max-width: 630px;
+		margin-left: 103px;
+	}
+
+	&__left {
+		display: flex;
+		flex-direction: column;
+		margin-right: 35px;
+		text-align: right;
+	}
+
+	&__right {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__title {
+		font-weight: 900;
+		font-size: 42px;
+		line-height: 130%;
+		text-align: right;
+		text-transform: uppercase;
+		color: var(--color-dark);
+		max-width: 230px;
+		margin-bottom: 36px;
+		position: relative;
+
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			right: -20px;
+			background: var(--color-dark);
+			width: 2px;
+			height: 100%;
+		}
+	}
+
+	&__old-price {
+		font-weight: 600;
+		font-size: 28px;
+		line-height: 130%;
+		margin-top: auto;
+		margin-bottom: 5px;
+		margin-left: auto;
+		max-width: max-content;
+		color: #949494;
+		position: relative;
+
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 0;
+			right: 0;
+			height: 2px;
+			width: 100%;
+			background: var(--color-red);
+		}
+	}
+
+	&__text {
+		font-weight: 600;
+		font-size: 42px;
+		line-height: 130%;
+		max-width: 410px;
+		color: var(--color-dark);
+		margin-bottom: 23px;
+	}
+
+	&__new-price {
+		font-weight: 800;
+		font-size: 42px;
+		line-height: 130%;
+		text-transform: uppercase;
+		color: var(--color-red);
+		margin-top: auto;
+	}
+
+	&__detail {
+		position: absolute;
+		bottom: 17px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: var(--color-dark);
+		border: 2px solid var(--color-dark);
+		margin-left: 26px;
+
+		svg {
+			margin-right: 10px;
+		}
+	}
+
+	&__picture {
+		margin-right: 102px;
+	}
+
+	&__counter {
+		bottom: 115px;
+		left: 13px;
+		transform-origin: 0 0;
+		transform: rotate(-90deg);
+	}
+
+	&__nav-item {
+		padding-bottom: 15px;
+		position: relative;
+		cursor: pointer;
+		margin-left: 20px;
+
+		&:focus {
+			outline: none;
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 2px;
+			background-color: var(--color-red);
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
+
+		&.slick-current::after {
+			opacity: 1;
+			transition: opacity 0.3s;
+		}
+	}
+
+	.slick-arrow {
+		left: -8px;
+		width: 30px;
+		height: 30px;
+		z-index: 10;
+		transform: translateX(0);
+		transition: transform 0.3s;
+	}
+
+	.slick-prev {
+		top: 191px;
+		background: url("../img/svg/arrow-left.svg") no-repeat center top;
+
+		&.slick-disabled {
+			background: url("../img/svg/arrow-left-disabled.svg") no-repeat center top;
+		}
+	}
+
+	.slick-prev:hover {
+		transform: translateX(-5px);
+		transition: transform 0.3s;
+	}
+
+	.slick-next {
+		top: 132px;
+		background: url("../img/svg/arrow-right.svg") no-repeat center top;
+
+		&.slick-disabled {
+			background: url("../img/svg/arrow-right-disabled.svg") no-repeat center top;
+		}
+	}
+
+	.slick-next:hover {
+		transform: translateX(5px);
+		transition: transform 0.3s;
+	}
+
+	.slick-dots {
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		margin-top: 35px;
+	}
+
+	.slick-dots li {
+		margin-right: 17px;
+	}
+
+	.slick-dots li button {
+		background: #fff;
+		border-radius: 50%;
+		width: 15px;
+		height: 15px;
+		display: block;
+		border: 3px solid var(--color-red);
+		font-size: 0;
+		cursor: pointer;
+	}
+
+	.slick-dots li.slick-active button {
+		background: var(--color-red);
+	}
+}
+
+.nav-item__img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 97px;
+	width: 97px;
+	border: 1px solid #d5d5d5;
+}
