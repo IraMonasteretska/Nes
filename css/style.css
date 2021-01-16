@@ -15,23 +15,15 @@
 
 @font-face {
   font-family: "Akrobat";
-  src: url("../fonts/Akrobat-ExtraBold.woff2") format("woff2");
+  src: url("../fonts/Akrobat-Bold.woff2") format("woff2");
   font-weight: 700;
   font-display: block;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Open sans";
-  src: url("../fonts/Open sans.woff2") format("woff2");
-  font-weight: 400;
-  font-display: block;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "Akrobat";
-  src: url("../fonts/Akrobat-Bold.woff2") format("woff2");
+  src: url("../fonts/Akrobat-ExtraBold.woff2") format("woff2");
   font-weight: 700;
   font-display: block;
   font-style: normal;
@@ -48,6 +40,14 @@
 @font-face {
   font-family: "Akrobat";
   src: url("../fonts/Akrobat.woff2") format("woff2");
+  font-weight: 400;
+  font-display: block;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open sans";
+  src: url("../fonts/Open sans.woff2") format("woff2");
   font-weight: 400;
   font-display: block;
   font-style: normal;
@@ -4365,4 +4365,4 @@ input {
   }
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=style.css.map */
