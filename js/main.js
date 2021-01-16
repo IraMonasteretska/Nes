@@ -219,24 +219,104 @@ $(function () {
       ]
    });
 
-   let photo = $('.vent-slider__item');
-   let all = photo.length;
+   let photo1 = $('.vent-slider__item');
+   let photo2 = $('.pump-slider__item');
+   let photo3 = $('.other-slider__item');
+   let all1 = photo1.length;
+   let all2 = photo2.length;
+   let all3 = photo3.length;
 
-   let u = 0;
+   $('.vent-slider__counter--right').text("0" + all1)
+   $('.pump-slider__counter--right').text("0" + all2)
+   $('.other-slider__counter--right').text("0" + all3)
+
+   let u1 = 0;
+   let u2 = 0;
+   let u3 = 0;
 
    $('.vent-slider__down').click(function () {
-      u--;
-      if (u < 0) u = all - 1;
-      $(photo).removeClass('active');
-      $(photo[u]).toggleClass('active');
+      u1--;
+      if (u1 < 0) u1 = all1 - 1;
+      $(photo1).removeClass('active');
+      $(photo1[u1]).toggleClass('active');
    })
 
-   $('.vent-slider__up').click(function () {
-      u++;
-      if (u >= all) u = 0;
-      $(photo).removeClass('active');
-      $(photo[u]).toggleClass('active');
+   $('.pump-slider__down').click(function () {
+      u2--;
+      if (u2 < 0) u2 = all2 - 1;
+      $(photo2).removeClass('active');
+      $(photo2[u2]).toggleClass('active');
    })
+
+   $('.other-slider__down').click(function () {
+      u3--;
+      if (u3 < 0) u3 = all3 - 1;
+      $(photo3).removeClass('active');
+      $(photo3[u3]).toggleClass('active');
+   })
+
+
+
+   $('.vent-slider__up').click(function () {
+      u1++;
+      if (u1 >= all1) u1 = 0;
+      $(photo1).removeClass('active');
+      $(photo1[u1]).toggleClass('active');
+   })
+
+   $('.pump-slider__up').click(function () {
+      u2++;
+      if (u2 >= all2) u2 = 0;
+      $(photo2).removeClass('active');
+      $(photo2[u2]).toggleClass('active');
+   })
+
+   $('.other-slider__up').click(function () {
+      u3++;
+      if (u3 >= all3) u3 = 0;
+      $(photo3).removeClass('active');
+      $(photo3[u3]).toggleClass('active');
+   })
+
+
+   $('.vent-slider__up').click(function() {
+      ventChangeSlide(u1 + 1, all1);
+   });
+
+   $('.vent-slider__down').click(function() {
+      ventChangeSlide(u1 + 1, all1);
+   });
+
+   $('.pump-slider__up').click(function() {
+      pumpChangeSlide(u2 + 1, all2);
+   });
+
+   $('.pump-slider__down').click(function() {
+      pumpChangeSlide(u2 + 1, all2);
+   });
+
+   $('.other-slider__up').click(function() {
+      otherChangeSlide(u3 + 1, all3);
+   });
+
+   $('.other-slider__down').click(function() {
+      otherChangeSlide(u3 + 1, all3);
+   });
+
+   let ventChangeSlide = function (u1, all1) {
+      $('.vent-slider__counter--left').text("0" + u1)
+      $('.vent-slider__counter--right').text("0" + all1)
+   };
+
+   let pumpChangeSlide = function (u2, all2) {
+      $('.pump-slider__counter--left').text("0" + u2)
+      $('.pump-slider__counter--right').text("0" + all2)
+   };
+
+   let otherChangeSlide = function (u3, all3) {
+      $('.other-slider__counter--left').text("0" + u3)
+      $('.other-slider__counter--right').text("0" + all3)
+   };
 
 
 
