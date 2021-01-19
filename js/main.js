@@ -322,6 +322,13 @@ $(function () {
       $('.header-bottom__title').toggleClass('hidden');
    })
 
+   /* Card Tile */
+
+   $('.icons__btn').click(function () {
+      $('.icons__btn').removeClass('active');
+      $(this).toggleClass('active');
+   })
+
 
    /* Card product */
 
