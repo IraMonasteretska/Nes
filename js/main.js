@@ -404,8 +404,17 @@ $(function () {
       $(this).closest('.products-price').toggleClass('products-filter--open');
    })
 
+   /* tabs cabinet */
 
-
-
-
+   $('.tabs__item').click(function () {
+      $('.tabs__item').removeClass("active");
+      $(this).addClass('active');
+      var href = $(this).attr('href');
+      $('.tab-pane').removeClass('active').removeClass('in');
+      $(href).addClass('active');
+      setTimeout(function () {
+         $(href).addClass('in');
+      }, 100);
+      return false;
+   })
 });

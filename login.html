@@ -245,10 +245,101 @@
 				</h1>
 				<div class="login__wrap">
 					<div class="login-left">
-
+						<div class="login-left__tabs tabs">
+							<nav class="tabs__items">
+								<a href="#tab_01" class="tabs__item active">
+									Вхід
+								</a>
+								<a href="#tab_02" class="tabs__item">
+									Реєстрація
+								</a>
+							</nav>
+							<div id="tab_01" class="tab-pane faded in active">
+								<form action="#" class="login-left__form">
+									<input type="text" class="form__input login-left__input" placeholder="E-mail або телефон">
+									<input type="text" class="form__input login-left__input" placeholder="Пароль">
+									<div class="login-left__bottom">
+										<label class="custom-checkbox login-checkbox">
+											<input type="checkbox"
+												class="custom-checkbox__input login-checkbox__input visually-hidden">
+											<span class="custom-checkbox__text login-checkbox__text">
+												Запам’ятати мене
+											</span>
+										</label>
+										<div class="login-left__remember">
+											<a href="#">Нагадати пароль</a>
+										</div>
+									</div>
+									<input type="submit" class="btn login-left__btn" value="Увійти">
+								</form>
+								<div class="social-block">
+									<p class="social-block__text">
+										Або увійти як користувач
+									</p>
+									<a href="#" class="social social--facebook">
+										<span>facebook</span>
+									</a>
+									<a href="#" class="social social--google">
+										<span>google</span>
+									</a>
+								</div>
+							</div>
+							<div id="tab_02" class="tab-pane faded">
+								<form action="#" class="register__form">
+									<input type="text" class="form__input login-left__input" placeholder="Ім’я *" required>
+									<input type="tel" class="form__input login-left__input" placeholder="Номер телефону *"
+										required>
+									<input type="email" class="form__input login-left__input" placeholder="E-mail *" required>
+									<input type="password" class="form__input login-left__input"
+										placeholder="Придумайте пароль *">
+									<p class="register__text">
+										Пароль повинен складатися з не менш ніж 6 символів, містити цифри та латинські літери,
+										у тому числі великі.
+									</p>
+									<input type="submit" class="btn register__btn" value="Зареєструватися">
+								</form>
+								<div class="social-block">
+									<p class="social-block__text">
+										Або увійти як користувач
+									</p>
+									<a href="#" class="social social--facebook">
+										<span>facebook</span>
+									</a>
+									<a href="#" class="social social--google">
+										<span>google</span>
+									</a>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="login-right">
-
+						<ul class="login-right__list">
+							<li class="login-right__item">
+								<h2 class="login-right__title">
+									Якісна продукція
+								</h2>
+								<p class="login-right__text">
+									У нас представлена продукція тільки ТОП брендів
+								</p>
+							</li>
+							<li class="login-right__item">
+								<h2 class="login-right__title">
+									Індивідуальний підхід
+								</h2>
+								<p class="login-right__text">
+									Наші фахівці допожуть підібрати продукцію саме під Ваші потреби
+								</p>
+							</li>
+							<li class="login-right__item">
+								<h2 class="login-right__title">
+									Найбільш комфортні умови
+								</h2>
+								<p class="login-right__text">
+									Розумний та зручний підбір товару, вигідні ціни та безкоштовна консультація з будь-якого
+									питання
+								</p>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</section>
