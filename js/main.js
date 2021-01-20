@@ -417,4 +417,25 @@ $(function () {
       }, 100);
       return false;
    })
+
+   /* tabs cabinet */
+
+   $('.ordering-radio').click(function () {
+      if ($('.radio__input[name="radio"][value="2"]').is(':checked')) {
+         $('.ordering-left__another').addClass('active');
+      } else {
+         $('.ordering-left__another').removeClass('active');
+      }
+   });
+
+   /* Ordering */
+   let count = $('.goods').length;
+   $('.goods-remove').click(function () {
+      $(this).closest('.goods').slideUp(500);
+      count--;
+      $('.ordering-right__count').text(count);
+   });
+
+
+
 });
