@@ -418,7 +418,7 @@ $(function () {
       return false;
    })
 
-   /* tabs cabinet */
+   /* ordering radio */
 
    $('.ordering-radio').click(function () {
       if ($('.radio__input[name="radio"][value="2"]').is(':checked')) {
@@ -435,6 +435,22 @@ $(function () {
       count--;
       $('.ordering-right__count').text(count);
    });
+
+   /* Cart hover */
+
+   $('.cart-hover').mouseenter(function () {
+      $('.cart-hidden').slideDown();
+      $('.ordering-right__close').click(function () {
+         $('.cart-hidden').slideUp();
+      });
+   })
+
+   $('.cart-hover').mouseleave(function () {
+      $('.cart-hidden').slideUp();
+   });
+
+
+
 
 
 
