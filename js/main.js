@@ -450,6 +450,86 @@ $(function () {
    });
 
 
+   /* About-us slider */
+   $('.about-us__slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: false,
+      infinite: true,
+      responsive: [
+         {
+            breakpoint: 576,
+            settings: {
+               arrows: false
+            }
+         }
+      ]
+   });
+
+   let currentSlide6;
+   let slidesCount6;
+
+   const updateSliderCounter6 = function (slick, currentIndex) {
+      currentSlide6 = slick.slickCurrentSlide() + 1;
+      slidesCount6 = slick.slideCount;
+      $('.about-us__slider-counter--left').text("0" + currentSlide6)
+      $('.about-us__slider-counter--right').text("0" + slidesCount6)
+   };
+
+   $('.about-us__slider').on('init', function (event, slick) {
+      updateSliderCounter6(slick);
+   });
+
+   $('.about-us__slider').on('afterChange', function (event, slick, currentSlide) {
+      updateSliderCounter6(slick, currentSlide);
+   });
+
+
+   /* Portfolio slider */
+
+   let currentSlide7;
+   let slidesCount7;
+
+   const updateSliderCounter7 = function (slick, currentIndex) {
+      currentSlide7 = slick.slickCurrentSlide() + 1;
+      slidesCount7 = slick.slideCount;
+      $('.portfolio-slider__counter--left').text("0" + currentSlide7)
+      $('.portfolio-slider__counter--right').text("0" + slidesCount7)
+   };
+
+   $('.portfolio-slider').on('init', function (event, slick) {
+      updateSliderCounter7(slick);
+   });
+
+   $('.portfolio-slider').on('afterChange', function (event, slick, currentSlide) {
+      updateSliderCounter7(slick, currentSlide);
+   });
+
+   $('.portfolio-slider').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: true,
+      infinite: true,
+      dots: false,
+      responsive: [
+         {
+            breakpoint: 600,
+            settings: {
+               slidesToShow: 1,
+            }
+         }
+      ]
+
+   });
+
+
+   /* about-us sticky */
+
+   $('.sticky-list__item').click(function () {
+      $('.sticky-list__item').removeClass('active');
+      $(this).addClass('active');
+   });
 
 
 
