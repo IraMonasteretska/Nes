@@ -438,15 +438,12 @@ $(function () {
 
    /* Cart hover */
 
-   $('.cart-hover').mouseenter(function () {
-      $('.cart-hidden').slideDown();
-      $('.ordering-right__close').click(function () {
-         $('.cart-hidden').slideUp();
-      });
-   })
-
-   $('.cart-hover').mouseleave(function () {
+   $('.ordering-right__close').click(function () {
       $('.cart-hidden').slideUp();
+      setTimeout(function () {
+         $('.cart-hidden').removeAttr('style');
+      }, 500);
+
    });
 
 
@@ -514,7 +511,25 @@ $(function () {
       dots: false,
       responsive: [
          {
-            breakpoint: 600,
+            breakpoint: 1365,
+            settings: {
+               slidesToShow: 2,
+            }
+         },
+         {
+            breakpoint: 992,
+            settings: {
+               slidesToShow: 3,
+            }
+         },
+         {
+            breakpoint: 768,
+            settings: {
+               slidesToShow: 2,
+            }
+         },
+         {
+            breakpoint: 576,
             settings: {
                slidesToShow: 1,
             }
@@ -526,12 +541,60 @@ $(function () {
 
    /* about-us sticky */
 
-   $('.sticky-list__item').click(function () {
-      $('.sticky-list__item').removeClass('active');
-      $(this).addClass('active');
+   window.addEventListener('scroll', () => {
+      let scrollDistance = window.scrollY - 800;
+
+      if (window.innerWidth > 768) {
+         document.querySelectorAll('.about__section').forEach((el, i) => {
+            if (el.offsetTop - document.querySelector('.sticky-list').clientHeight <= scrollDistance) {
+               document.querySelectorAll('.sticky-list__item').forEach((el) => {
+                  if (el.classList.contains('active')) {
+                     el.classList.remove('active');
+                  }
+               });
+
+               document.querySelectorAll('.sticky-list__item')[i].classList.add('active');
+            }
+         });
+      }
    });
 
+   /* Modal window */
 
+   const btns = document.querySelectorAll('.modal__btn');
+   const modalOverlay = document.querySelector('.modal-overlay ');
+   const modals = document.querySelectorAll('.modal');
+   const close = document.querySelector('.modal--close');
 
+   btns.forEach((el) => {
+      el.addEventListener('click', (e) => {
+         let path = e.currentTarget.getAttribute('data-path');
+
+         modals.forEach((el) => {
+            el.classList.remove('modal--visible');
+         });
+
+         document.querySelector(`[data-target="${path}"]`).classList.add('modal--visible');
+         modalOverlay.classList.add('modal-overlay--visible');
+
+      });
+   });
+
+   modalOverlay.addEventListener('click', (e) => {
+
+      if (e.target == modalOverlay) {
+         modalOverlay.classList.remove('modal-overlay--visible');
+         modals.forEach((el) => {
+            el.classList.remove('modal--visible');
+         });
+      }
+   });
+
+   close.addEventListener('click', (e) => {
+      modalOverlay.classList.remove('modal-overlay--visible');
+      modals.forEach((el) => {
+         el.classList.remove('modal--visible');
+      });
+   });
 
 });

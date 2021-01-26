@@ -407,7 +407,7 @@
 				</div>
 				<div class="about-us__wrap">
 					<div class="about-us__left">
-						<section class="why" id="why">
+						<section class="why about__section" id="why">
 							<h2 class="about-us__title">
 								<span>Чому</span> ми?
 							</h2>
@@ -446,7 +446,7 @@
 								Здивуйте нас!
 							</p>
 						</section>
-						<section class="how" id="how">
+						<section class="how about__section" id="how">
 							<h2 class="about-us__title how__title">
 								<span>Як</span> ми працюємо?
 							</h2>
@@ -485,7 +485,7 @@
 								</li>
 							</ol>
 						</section>
-						<section class="portfolio" id="portfolio">
+						<section class="portfolio about__section" id="portfolio">
 							<h2 class="about-us__title portfolio__title">
 								Портфоліо
 							</h2>
@@ -538,7 +538,7 @@
 								</div>
 							</div>
 						</section>
-						<section class="partners" id="partners">
+						<section class="partners about__section" id="partners">
 							<h2 class="about-us__title partners__title">
 								<span>Наші</span> партнери
 							</h2>
@@ -678,7 +678,7 @@
 								</button>
 							</div>
 						</section>
-						<section class="objects" id="objects">
+						<section class="objects about__section" id="objects">
 							<h2 class="about-us__title objects__title">
 								Проєкти
 							</h2>
@@ -722,7 +722,7 @@
 								</div>
 							</div>
 						</section>
-						<section class="clients" id="clients">
+						<section class="clients about__section" id="clients">
 							<h2 class="about-us__title clients__title">
 								Наші клієнти
 							</h2>
@@ -804,7 +804,7 @@
 								</li>
 							</ol>
 						</section>
-						<section class="vacancies" id="vacancies">
+						<section class="vacancies about__section" id="vacancies">
 							<h2 class="about-us__title vacancies__title">
 								Співпраця та вакансії
 							</h2>
@@ -1001,9 +1001,9 @@
 					<p class="footer__text">
 						Надаємо <b>безкоштовні</b> консультації з будь-яких питань сфери.
 					</p>
-					<a href="#" class="link footer__link">
+					<button class="link footer__link modal__btn" data-path="popup">
 						<span class="link__text">Безкоштовна консультація</span>
-					</a>
+					</button>
 				</div>
 				<nav class="footer-nav">
 					<div class="footer-nav__item">
@@ -1112,6 +1112,43 @@
 						</a>
 					</li>
 				</ul>
+			</div>
+			<div class="modal-overlay">
+				<div class="modal modal--1" data-target="popup">
+					<div class="modal__close">
+						<button class="close modal--close"></button>
+					</div>
+
+					<div class="modal-left">
+						<h2 class="title modal__title">
+							<span>Безкоштовна</span> консультація
+						</h2>
+						<p class="modal__text">
+							<span>Виникли труднощі з підбором обладнання Вашого будинку?</span> Пришліть проєкт або короткий
+							опис системи і
+							наші іннженери Вам допоможуть абсолютно безкоштовно
+						</p>
+						<form action="#" class="modal-form">
+							<div class="form-group">
+								<input type="text" class="form__input modal-form__input" placeholder="Вaше ім’я *">
+								<input type="tel" class="form__input modal-form__input" placeholder="Телефон *">
+							</div>
+							<input type="email" class="form__input modal-form__email" placeholder="E-mail *">
+							<textarea class="form__textarea modal-form__textarea" cols="30" rows="4"
+								placeholder="Коментар"></textarea>
+							<div class="form-group">
+								<div class="form-group__upload">
+									<input type="file" name="file" id="upload-file">
+									<label for="upload-file" class="modal-form__upload">Прикріпити файл проєкту</label>
+								</div>
+								<input type="submit" class="btn modal-form__btn" value="Надіслати">
+							</div>
+						</form>
+					</div>
+					<div class="modal-right">
+						<img src="img/modal-img.png" class="modal-right__img" alt="man">
+					</div>
+				</div>
 			</div>
 		</section>
 	</footer>

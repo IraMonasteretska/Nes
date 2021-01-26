@@ -637,9 +637,9 @@
 					<p class="footer__text">
 						Надаємо <b>безкоштовні</b> консультації з будь-яких питань сфери.
 					</p>
-					<a href="#" class="link footer__link">
+					<button class="link footer__link modal__btn" data-path="popup">
 						<span class="link__text">Безкоштовна консультація</span>
-					</a>
+					</button>
 				</div>
 				<nav class="footer-nav">
 					<div class="footer-nav__item">
@@ -748,6 +748,43 @@
 						</a>
 					</li>
 				</ul>
+			</div>
+			<div class="modal-overlay">
+				<div class="modal modal--1" data-target="popup">
+					<div class="modal__close">
+						<button class="close modal--close"></button>
+					</div>
+
+					<div class="modal-left">
+						<h2 class="title modal__title">
+							<span>Безкоштовна</span> консультація
+						</h2>
+						<p class="modal__text">
+							<span>Виникли труднощі з підбором обладнання Вашого будинку?</span> Пришліть проєкт або короткий
+							опис системи і
+							наші іннженери Вам допоможуть абсолютно безкоштовно
+						</p>
+						<form action="#" class="modal-form">
+							<div class="form-group">
+								<input type="text" class="form__input modal-form__input" placeholder="Вaше ім’я *">
+								<input type="tel" class="form__input modal-form__input" placeholder="Телефон *">
+							</div>
+							<input type="email" class="form__input modal-form__email" placeholder="E-mail *">
+							<textarea class="form__textarea modal-form__textarea" cols="30" rows="4"
+								placeholder="Коментар"></textarea>
+							<div class="form-group">
+								<div class="form-group__upload">
+									<input type="file" name="file" id="upload-file">
+									<label for="upload-file" class="modal-form__upload">Прикріпити файл проєкту</label>
+								</div>
+								<input type="submit" class="btn modal-form__btn" value="Надіслати">
+							</div>
+						</form>
+					</div>
+					<div class="modal-right">
+						<img src="img/modal-img.png" class="modal-right__img" alt="man">
+					</div>
+				</div>
 			</div>
 		</section>
 	</footer>
