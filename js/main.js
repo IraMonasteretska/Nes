@@ -327,8 +327,13 @@ $(function () {
    $('.icons__btn').click(function () {
       $('.icons__btn').removeClass('active');
       $(this).toggleClass('active');
+      if ($(this).attr('data-columns') == 1) {
+         $('.products-right__list').addClass('columns-1');
+      }
+      else {
+         $('.products-right__list').removeClass('columns-1');
+      }
    })
-
 
    /* Card product */
 
@@ -595,6 +600,43 @@ $(function () {
       modals.forEach((el) => {
          el.classList.remove('modal--visible');
       });
+   });
+
+   // related-slider
+
+   let currentSlide8;
+   let slidesCount8;
+
+   const updateSliderCounter8 = function (slick, currentIndex) {
+      currentSlide8 = slick.slickCurrentSlide() + 1;
+      slidesCount8 = slick.slideCount;
+      $('.related-slider__counter--left').text("0" + currentSlide8)
+      $('.related-slider__counter--right').text("0" + slidesCount8)
+   };
+
+   $('.related-slider').on('init', function (event, slick) {
+      updateSliderCounter8(slick);
+   });
+
+   $('.related-slider').on('afterChange', function (event, slick, currentSlide) {
+      updateSliderCounter8(slick, currentSlide);
+   });
+
+   $('.related-slider').slick({
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      arrows: true,
+      infinite: true,
+      dots: false,
+      responsive: [
+         {
+            breakpoint: 576,
+            settings: {
+               slidesToShow: 1,
+            }
+         }
+      ]
+
    });
 
 });
