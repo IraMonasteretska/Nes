@@ -346,7 +346,7 @@ $(function () {
             $(this).prev('.card-list').addClass("active");
          }, 300);
       }
-      $(this).closest('.card__bottom').prev().slideToggle();
+      $(this).closest('.card').toggleClass('open');
    })
 
 
@@ -638,5 +638,7 @@ $(function () {
       ]
 
    });
+
+
 
 });
