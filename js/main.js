@@ -99,6 +99,9 @@ $(function () {
                slidesToScroll: 1,
                variableWidth: false,
                arrows: false,
+               infinite: true,
+               autoplay: true,
+               speed: 1000,
             }
          }
       ]
@@ -321,7 +324,6 @@ $(function () {
 
 
    $('.burger__wrap').click(function () {
-      $('body').toggleClass('lock');
       $('.header-menu').toggleClass('active');
       $('.burger').toggleClass('active');
       $('.header-bottom__title').toggleClass('hidden');
@@ -478,6 +480,8 @@ $(function () {
       arrows: true,
       dots: false,
       infinite: true,
+      autoplay: true,
+      speed: 1000,
       responsive: [
          {
             breakpoint: 576,
@@ -646,12 +650,21 @@ $(function () {
       slidesToScroll: 1,
       arrows: true,
       infinite: true,
+      autoplay: true,
+      speed: 1000,
       dots: false,
       responsive: [
+         {
+            breakpoint: 992,
+            settings: {
+               slidesToShow: 1,
+            }
+         },
          {
             breakpoint: 576,
             settings: {
                slidesToShow: 1,
+               arrows: false,
             }
          }
       ]
